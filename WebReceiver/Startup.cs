@@ -31,9 +31,9 @@ namespace WebReceiver
                 {
                     return new ConnectionFactory()
                     {
-                        VirtualHost = "search_condition",
-                        UserName = "search_receiver",
-                        Password = "1q2w3e4r5t_",
+                        VirtualHost = "",
+                        UserName = "",
+                        Password = "",
                         AutomaticRecoveryEnabled = true,
                         RequestedHeartbeat = 60
                     };
@@ -41,7 +41,7 @@ namespace WebReceiver
                 .AddSingleton(sp =>
                 {
                     var connectionFactory = sp.GetRequiredService<IConnectionFactory>();
-                    var endpoints = new List<string> { "srvdocker-t:5672", "srvdocker-t:5673", "srvdocker-t:5674" };
+                    var endpoints = new List<string> { "", "", "" };
                     var amqpTcpEndpoints = new List<AmqpTcpEndpoint>();
                     foreach (var endpoint in endpoints)
                     {
